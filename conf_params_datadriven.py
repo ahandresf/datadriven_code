@@ -9,18 +9,18 @@ we can set the values here an import them.
 '''
 
 '''
+INPUT DATASETS
+'''
+#Reduce
+INPUT_DATASET ='./his_data/short_x_cut.pickle'
+OUTPUT_DATASET ='./his_data/short_y_cut.pickle'
+
+'''
 ACTION AND STATE NAMES
 '''
-#STATE_NAMES = './env_data/state_names.npy'
-#ACTION_NAMES = './env_data/action_names.npy'
-
-#STATE_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_06_104606/short_states.npy'
-#ACTION_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_06_104606/short_actions.npy'
-
-STATE_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_states.npy'
-ACTION_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_actions.npy'
-
-
+#Reduce
+STATE_NAMES = './his_data/short_actions.npy'
+ACTION_NAMES = './his_data/short_states.npy'
 '''
 ACTION AND STATE SPACE DIMENSIONS
 Number of variables in the state an action space eg. (velocity, position) will
@@ -90,12 +90,30 @@ MARKOVIAN_ORDER = 2
 Output Folder
 '''
 
+
+'''
+OLD STUFF
+'''
+
+'''
+ACTION AND STATE NAMES
+'''
+#STATE_NAMES = './env_data/state_names.npy'
+#ACTION_NAMES = './env_data/action_names.npy'
+
+#STATE_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_06_104606/short_states.npy'
+#ACTION_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_06_104606/short_actions.npy'
+
+#STATE_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_states.npy'
+#ACTION_NAMES = 'C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_actions.npy'
+
 '''
 INPUT DATASETS
 '''
+
 #Reduce dataset 9s 4a
-INPUT_DATASET='C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_x_cut.pickle'
-OUTPUT_DATASET='C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_y_cut.pickle'
+#INPUT_DATASET='C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_x_cut.pickle'
+#OUTPUT_DATASET='C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_y_cut.pickle'
 
 #Reduce dataset 9s 4a
 #INPUT_DATASET='C:/Users/aalbaher/dataset_pttgc/data_preprocess/May_13_165417/short_x.pickle'
