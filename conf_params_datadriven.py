@@ -41,7 +41,7 @@ POLYNOMIAL_DEGREE=1
 GENERAL PARAMETERS OF NEURONAL NETWORKS
 '''
 DROPOUT_RATE = 0.1 #how many neurons you drop during training. It seems to help reducing bias.
-EPOCHS = 1000
+EPOCHS = 10 #1000
 BATCH_SIZE = 512
 ACTIVATION = 'tanh'
 N_LAYER = 3

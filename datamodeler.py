@@ -173,6 +173,35 @@ if __name__=="__main__":
             filename='./models/'+time_stamp+'/tune_nn_random_search_results_'+str(100*result.best_score_)+'.pkl'
             #filename='./models/nn_random_search_results_'+str(100*result.best_score_)+'.pkl'
             joblib.dump(result.best_params_, filename)
+            #new code from branch small fixes
+            config={"epochs": 1000,
+                "batch_size": 512,
+                "activation":result.best_params_["activation"],
+                "n_layer": result.best_params_["num_hidden_layers"],
+                "n_neuron": result.best_params_["num_neurons"],
+                "lr": result.best_params_["learning_rate"],
+                "decay": result.best_params_["decay"],
+                "dropout": result.best_params_["dropout_rate"]
+                    }
+            nn_estimator=env_nn_modeler(state_space_dim=state_space_dim,action_space_dim=action_space_dim)
+            nn_estimator.create_model(config)
+            nn_estimator.train_nn_model(x_train,y_train,config["epochs"],config["batch_size"])
+            nnmodel=nn_estimator.model
+            nn_estimator.evaluate_nn_model(x_test, y_test,config["batch_size"])
+            test_score=nn_estimator.score[1]*100
+            randomsample=np.random.random_integers(0,10,1)
+            x_sample=x_set[randomsample]
+            print('random sample:', x_sample)
+            predict_sample=nnmodel.predict(x_sample)
+            print('estimator prediction: ', predict_sample)
+            print('actual value:', y_set[randomsample])
+
+            #Save model
+            modelname='./models/'+time_stamp+'/nnmodel'+str(int(test_score))+'.h5'
+            nnmodel.save(modelname)
+            modelname2='./models/'+time_stamp+'/nnmodel.h5'
+            nnmodel.save(modelname2)
+
         time.sleep(10)
 
     if args.use_gb==True and args.tune_rs==True:
